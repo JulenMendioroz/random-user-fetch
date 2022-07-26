@@ -1,0 +1,184 @@
+:root {
+  --bd-rad: 1rem;
+  --card-size: 6rem;
+  --transition: 200ms ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 18rem;
+
+  padding: 0.5rem;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: linear-gradient(
+      to bottom right,
+      hsl(335, 65%, 55%),
+      hsl(310, 30%, 50%),
+      hsl(225, 50%, 50%)
+    )
+    no-repeat fixed;
+}
+
+.form {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-inline: auto;
+  padding: 1rem;
+  width: fit-content;
+
+  border-radius: var(--bd-rad);
+  background-color: hsl(200, 30%, 20%);
+  box-shadow: 0 0 1rem black;
+}
+
+.form label {
+  white-space: nowrap;
+}
+
+.form :where(input, select) {
+  padding: 0.25rem 0.5rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--bd-rad);
+
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.form :where(input, select):where(:hover, :focus) {
+  color: white;
+  background-color: hsl(308, 32%, 48%);
+  outline: none;
+}
+
+.btn-group {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+
+  color: inherit;
+  text-decoration: none;
+  background-color: hsl(357, 95%, 66%);
+  border: 1px solid transparent;
+  border-radius: var(--bd-rad);
+
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.btn:where(:hover, :focus) {
+  border-color: hsl(308, 32%, 38%);
+  background-color: hsl(308, 32%, 48%);
+  outline: none;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 2rem;
+  margin-inline: auto;
+  width: min(95%, 100rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: min(90%, calc(var(--card-size) * 3));
+
+  padding: 1rem;
+
+  background-color: hsl(200, 30%, 25%);
+  border-radius: var(--bd-rad);
+  box-shadow: 0 0 0.5rem black;
+
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.card:where(:hover, :focus-within) {
+  transform-origin: center;
+  transform: scale(1.05);
+  background-color: hsl(200, 30%, 20%);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profile {
+  width: 128px;
+  border-radius: 50%;
+}
+
+.name {
+  max-width: 100%;
+
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+
+.location-icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  background: url(../assets/location.svg) center/cover no-repeat;
+}
+
+.country {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  color: hsl(355, 95%, 65%);
+}
+
+.card-content {
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.description {
+  display: -webkit-box;
+  text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

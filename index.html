@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Users</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="src/index.js" defer></script>
+  </head>
+  <body>
+    <form id="userForm" class="form">
+      <label for="results">Cantidad
+        <input
+          type="number"
+          name="results"
+          id="results"
+          min="1"
+          max="20"
+          value="1"
+          required          
+        />
+      </label>
+      <label for="gender">Género
+        <select name="gender" id="gender">
+          <option value="">Todos</option>
+        </select>
+      </label>
+      <label for="nationality">Nacionalidad
+        <select name="nat" id="nationality">
+          <option value="">Cualquiera</option>
+        </select>
+      </label>
+      <div class="btn-group">
+        <button type="submit" class="btn">Generar</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </form>
+    <div id="cardContainer" class="card-container"></div>
+    <template id="card">
+      <div class="card">
+        <div class="card-header">
+          <img class="profile" src="" alt="user profile" data-profile>
+          <h2 class="name" data-full-name></h2>             
+          <h3 class="country"><i class="location-icon"></i><span data-country-name></span></h3>
+        </div>
+        <div class="card-content">
+          <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo saepe itaque alias ratione aperiam incidunt, quo dicta quas culpa rem fugit exercitationem, laudantium dolores perferendis enim expedita accusantium perspiciatis tenetur.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn" data-email>Contactar</a>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
